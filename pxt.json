@@ -9,7 +9,7 @@
         "envirobit": "github:pimoroni/pxt-envirobit#v0.0.5",
         "neopixel": "github:microsoft/pxt-neopixel#v0.7.6",
         "pxt-tcs3200-color-sensor": "github:DoraLC/pxt-tcs3200-color-sensor#v0.0.5",
-        "pxt-SEN-Color": "github:joy-it/pxt-SEN-Color#1.0.1"
+        "pxt-SEN-Color": "github:joy-it/pxt-sen-color#1.0.1"
     },
     "files": [
         "main.blocks",

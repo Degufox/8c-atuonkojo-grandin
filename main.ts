@@ -1,23 +1,22 @@
-let strip: neopixel.Strip = null
-let red = 0
-let red_lol = 0
-let blue_lol = 0
-let blue = 0
-let green = 0
-let green_lol = 0
 input.onButtonPressed(Button.A, function () {
     SENColor.calibrate()
 })
+let green_lol = 0
+let green = 0
+let blue = 0
+let blue_lol = 0
+let red_lol = 0
+let red = 0
+let strip = neopixel.create(DigitalPin.P0, 10, NeoPixelMode.RGB)
+SENColor.setPins(
+DigitalPin.P15,
+DigitalPin.P1,
+DigitalPin.P8,
+DigitalPin.P12,
+DigitalPin.P2
+)
 basic.forever(function () {
-    SENColor.setPins(
-    DigitalPin.P15,
-    DigitalPin.P1,
-    DigitalPin.P8,
-    DigitalPin.P12,
-    DigitalPin.P2
-    )
-    if (SENColor.getColor(color.red) == 100) {
-        strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
+    if (SENColor.getColor(color.red) <= 50) {
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
         basic.showLeds(`
             # # # . .
@@ -26,7 +25,7 @@ basic.forever(function () {
             # . # . .
             # . . # .
             `)
-    } else if (SENColor.getColor(color.blue) == 100) {
+    } else if (SENColor.getColor(color.blue) <= 50) {
         strip.showColor(neopixel.colors(NeoPixelColors.Blue))
         basic.showLeds(`
             # # . . .
@@ -35,7 +34,7 @@ basic.forever(function () {
             # . # . .
             # # . . .
             `)
-    } else if (SENColor.getColor(color.green) == 100) {
+    } else if (SENColor.getColor(color.green) <= 50) {
         basic.showLeds(`
             . # # # .
             # . . . .
